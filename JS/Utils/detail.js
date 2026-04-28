@@ -74,9 +74,9 @@ export async function render(){
             </div>
             <div class="quantity-box">
             <div class="quantity">
-                <button class="minus" data-id=${e.productId}><img src="../images/icon-minus.svg"></button>
+                <button class="minus" data-id=${e.productId}><img src="./images/icon-minus.svg"></button>
                 <span class="count" data-id=${e.productId}>1</span>
-                <button class="plus" data-id=${e.productId}><img src="../images/icon-plus.svg"></button>
+                <button class="plus" data-id=${e.productId}><img src="./images/icon-plus.svg"></button>
             </div>
             <button class="add" data-id=${e.productId}> 
                 <img src="../images/icon-cart.svg" class=cart-svg>
