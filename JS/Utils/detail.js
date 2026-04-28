@@ -1,4 +1,4 @@
-import {getProduct} from "../Services/api.js";
+import {getProduct} from "./Services/api.js";
 import { renderCart } from "./cart.js";
 
 
