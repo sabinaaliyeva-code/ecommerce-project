@@ -79,7 +79,7 @@ export async function render(){
                 <button class="plus" data-id=${e.productId}><img src="./images/icon-plus.svg"></button>
             </div>
             <button class="add" data-id=${e.productId}> 
-                <img src="../images/icon-cart.svg" class=cart-svg>
+                <img src="./images/icon-cart.svg" class=cart-svg>
                 <span>Add To Card</span>
             </button>
             </div>
