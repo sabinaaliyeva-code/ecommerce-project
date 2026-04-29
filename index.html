@@ -16,23 +16,28 @@
 
     <header>
         <div class="header-left">
-        <a href="index.html" id="logo">
+        <div class="menu-icon">
+            <img src="./images/icon-menu.svg">
+        </div>
+        <div id="logo">
+        <a href="index.html">
             <img src="./images/logo.svg">
-
         </a>
+        </div>
         <nav>
             <ul>
-                <li><a href="">Collection</a></li>
-                <li><a href="">Men</a></li>
-                <li><a href="">Women</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        
         </div>
         <div class="header-right">
        
-        <div class="product-cart" class="open">
+        <div class="product-cart" >
             <img src="./images/icon-cart.svg" class="cart-svg">
             <span class="cart-count">0</span>
         </div>
@@ -40,8 +45,8 @@
         <img src="./images/image-avatar.png" alt="profile" class="profile">
         </div>
        
-        </div>
-
+        
+    <div class="cart-notification"><p>Successfully added to cart</p></div>
     </header>
     <main>
         <div class="right">
@@ -63,6 +68,7 @@
 
         </div>
         
+        
         <div class="cart-box">
 
             <div class="title"><h4>Cart</h4></div>
@@ -70,18 +76,19 @@
             <div class="close">
                 <img src="./images/icon-close.svg">
             </div>
-            <div class="basket-container">
+            <div class="cart-container">
 
             </div>
 
         </div>
+        
 
     </main>
     
      <script type="module"  src="./JS/Utils/detail.js" ></script>
-     <script src="./JS/Utils/cartCount.js"></script>
-     <script src="./JS/Utils/detailSlider.js"></script>
-      <script type="module" src="./JS/Utils/cart.js"></script>
+     <script src="./JS/Utils/app.js"></script>
+    <script type="module" src="./JS/Utils/cart.js"></script>
+      
     
 </body>
 </html>

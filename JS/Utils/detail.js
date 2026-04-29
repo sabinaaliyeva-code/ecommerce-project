@@ -19,28 +19,39 @@ export async function render(){
     let thumbImages=document.querySelector(".row")
     productImages.innerHTML=" "
     thumbImages.innerHTML=" "
+    let imagesHTML = " "
 
 
    data.forEach((e)=>{
         
-       
+        
+
 
         e.images.forEach((img)=>{
+            
            
-           productImages.innerHTML=productImages.innerHTML +
+           imagesHTML=imagesHTML +
            
-           `<img src="${img.full}" class="image-product" data-img-id="${img.id}">
+           `
+           <img src="${img.full}" class="image-product" data-img-id="${img.id}">
             `
 
            
         })
 
-        productImages.innerHTML=productImages.innerHTML +
-           
-           `
-           <a class="prev"></a> 
-           <a class="next"></a>
-            `
+        productImages.innerHTML = `
+        <div class="slider-wrapper">
+             ${imagesHTML}
+
+            <div class="prev">
+                <img src="./images/icon-previous.svg">
+            </div>
+
+            <div class="next">
+              <img src="./images/icon-next.svg">
+            </div>
+        </div>
+        `
         
 
        
@@ -59,8 +70,8 @@ export async function render(){
         productInfo.innerHTML=
 
         `<div class="product-info">
-                <div class="company">${e.company}</div>
-                <div class="title">${e.productName}</div>
+                <div class="company"><p>${e.company}</p></div>
+                <div class="title"><p>${e.productName}</p></div>
                 <div class="description">
                     <p>${e.description}</p>
                 </div>
@@ -90,9 +101,9 @@ export async function render(){
 
 
         
+      //Slider for images
 
-
-      
+      Slider()
             
     })
 
@@ -119,6 +130,7 @@ export async function render(){
         let count = Number(countSpan.innerText);
 
         let productCart = JSON.parse(localStorage.getItem("product-cart") || "[]");
+        let cartNofication=document.querySelector(".cart-notification");
 
         //plus
         if (btn.classList.contains("plus")) {
@@ -149,6 +161,14 @@ export async function render(){
               });
             }
 
+
+           cartNofication.classList.add("active");
+        
+           setTimeout(()=>{
+            cartNofication.classList.remove("active");
+           },2000)
+           
+           console.log(cartNofication)
             
             
 
@@ -158,7 +178,9 @@ export async function render(){
             
             
             countSpan.innerText = 1;
-            alert("Added to cart");
+           
+
+            
 
             
             localStorage.setItem("product-cart", JSON.stringify(productCart));
@@ -239,43 +261,8 @@ closeBtn.addEventListener("click", () => {
 
     
 
-    //Image Sliders
-    setupSlider()
+   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
 
 
 render()
